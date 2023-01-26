@@ -14,7 +14,23 @@ class Home extends CI_Controller
 		];
 		$this->load->view('home', $data);
 	}
-	public function latest(){
-	
+	public function lancamentos(){
+		
+		$this->load->library("Tmdb");
+		
+		$data = [
+			'data' => $this->tmdb->listMoviesLatests()
+		];
+		$this->load->view('lancamentos', $data);
+	}
+
+	public function informationMovie(){
+		$this->load->library("Tmdb");
+
+		$data = [
+			'data' => $this->tmdb->informationMovies()
+		];
+
+		$this->load->view('information_movie', $data);
 	}
 }
