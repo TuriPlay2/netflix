@@ -26,6 +26,7 @@
                         <p>
                             <?=$value['popularity'] ?>
                         </p>
+                        <a href="<?= base_url("information_movie?id=".$value["id"])?>" class="btn btn-primary">Ler mais</a>    
                     </div>
                 </div>
             </div>

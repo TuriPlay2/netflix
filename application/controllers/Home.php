@@ -26,11 +26,12 @@ class Home extends CI_Controller
 
 	public function informationMovie(){
 		$this->load->library("Tmdb");
-
+		$id = $this->input->get("id");
 		$data = [
-			'data' => $this->tmdb->informationMovies()
+			'data' => $this->tmdb->informationMovies($id),
+			'video' => $this->tmdb->videoMovies($id)
 		];
-
+		
 		$this->load->view('information_movie', $data);
 	}
 }

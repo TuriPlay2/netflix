@@ -13,32 +13,35 @@
 <body>
     <div class="container">
         <div class="row">
-            
-        <?php
-            foreach ($data['results'] as $value) {
-        ?>
-            <div class="col-md-3">
-                <div class="card mt-3 card-movie">
-                    <img src="https://image.tmdb.org/t/p/w500/<?= $value['poster_path']?>" class="card-img-top">
+            <div class="col-md-12">
+                <div class="card mt-3">
                     <div class="card-body">
                         <h5 class="card-title">
-                            <?= $value['release_date']?>
+                            Popularidade: <?= $data['popularity']?>
                         </h5>
                        
                         <h5 class="card-title">
-                            <?= $value['original_title']?>
+                           Titulo original: <?= $data['original_title']?>
                         </h5>
                        
                         <h5 class="card-title">
-                            Filme para adultos: <?= $value['adult']?>
+                            Filme para adultos: <?php if ($data['adult'] = true){
+                                    echo "Sim";
+                                }else{
+                                    echo "Não";
+                                }?>
                         </h5>
-                        
+
+                        <h5 class="card-title">
+                            Video: 
+                        </h5>
+                        <iframe src="https://www.youtube.com/embed/<?= $video['results']['0']['key']?>" autoplay="true" class="w-100" style="height: 450px"></iframe>
+                        <br>
                         <a href="<?= base_url("")?>" class="btn btn-primary">Voltar</a>
                     </div>
                 </div>
             </div>
         <?php
-            }
         ?>
         </div>
 
